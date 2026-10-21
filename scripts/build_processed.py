@@ -44,8 +44,12 @@ notable = raw[raw["Notability criteria"].notna()].copy()
 
 df = pd.DataFrame({
     "model": notable["Model"],
-    "org_raw": notable["Organization"].fillna("Unknown"),
-    "org": notable["Organization"].fillna("Unknown").replace(ORG_MERGES),
+    # Epoch lists every contributing organisation, comma separated (28% of notable
+    # models have more than one). We attribute the model to the first one listed,
+    # so compute is never counted twice, and keep the full list for the record.
+    "org_all": notable["Organization"].fillna("Unknown"),
+    "org_count": notable["Organization"].fillna("Unknown").str.count(",") + 1,
+    "org": notable["Organization"].fillna("Unknown").str.split(",").str[0].str.strip().replace(ORG_MERGES),
     "org_type": notable["Organization categorization"].apply(org_type),
     "open_weights": notable["Open model weights?"].map({"Yes": "yes", "No": "no"}).fillna("unknown"),
     "compute_flops": pd.to_numeric(notable["Training compute (FLOP)"], errors="coerce"),
@@ -53,7 +57,7 @@ df = pd.DataFrame({
 })
 
 df = df[df["publication_date"].notna()]
-df = df.drop_duplicates(subset=["model", "org_raw", "publication_date"])
+df = df.drop_duplicates(subset=["model", "org_all", "publication_date"])
 df = df.sort_values("publication_date")
 
 df.to_csv(OUT, index=False)
