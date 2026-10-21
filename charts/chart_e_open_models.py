@@ -9,9 +9,10 @@ def render(df):
         "### Chart E — Percentage of models with open weights"
     )
 
+    # Show the years required by the group plan.
     data = df[df["year"].between(2018, 2025)].copy()
 
-    # Exclude unknown status from the denominator.
+    # Standardise the open-weight status values.
     data["open_weights"] = (
         data["open_weights"]
         .astype("string")
@@ -19,25 +20,38 @@ def render(df):
         .str.lower()
     )
 
-    known = data[data["open_weights"].isin(["yes", "no"])].copy()
+    # Exclude unknown status from the percentage denominator.
+    known = data[
+        data["open_weights"].isin(["yes", "no"])
+    ].copy()
 
     if known.empty:
-        st.info("No models with known open-weight status for these years.")
+        st.info(
+            "No models with known open-weight status "
+            "for the selected years."
+        )
         return
 
+    # Calculate the yearly percentage of open-weight models.
     yearly = (
         known.groupby("year")
         .agg(
             known_models=("open_weights", "size"),
-            open_models=("open_weights", lambda s: (s == "yes").sum()),
+            open_models=(
+                "open_weights",
+                lambda s: (s == "yes").sum(),
+            ),
         )
         .reset_index()
     )
 
     yearly["open_percentage"] = (
-        yearly["open_models"] / yearly["known_models"] * 100
+        yearly["open_models"]
+        / yearly["known_models"]
+        * 100
     )
 
+    # Line chart with points.
     chart = alt.Chart(yearly).mark_line(
         point=True,
         color=viz.TEAL_DARK,
@@ -53,20 +67,48 @@ def render(df):
             scale=alt.Scale(domain=[0, 100]),
         ),
         tooltip=[
-            alt.Tooltip("year:O", title="Year"),
+            alt.Tooltip(
+                "year:O",
+                title="Year",
+            ),
             alt.Tooltip(
                 "open_percentage:Q",
                 title="Open-weight models (%)",
                 format=".1f",
             ),
-            alt.Tooltip("open_models:Q", title="Open models"),
-            alt.Tooltip("known_models:Q", title="Models with known status"),
+            alt.Tooltip(
+                "open_models:Q",
+                title="Open models",
+            ),
+            alt.Tooltip(
+                "known_models:Q",
+                title="Models with known status",
+            ),
         ],
     ).properties(height=350)
 
-    st.altair_chart(chart, width="stretch")
+    # Percentage labels above every point.
+    labels = alt.Chart(yearly).mark_text(
+        dy=-12,
+        fontSize=12,
+        color="#222222",
+    ).encode(
+        x=alt.X("year:O"),
+        y=alt.Y("open_percentage:Q"),
+        text=alt.Text(
+            "open_percentage:Q",
+            format=".1f",
+        ),
+    )
+
+    # Display the line chart and labels together.
+    st.altair_chart(
+        chart + labels,
+        width="stretch",
+    )
 
     st.caption(
-        "Percentage = models marked yes divided by models marked yes or no "
-        "in each year. Models with unknown open-weight status are excluded."
+        "Percentage calculated as models marked yes divided by "
+        "models marked yes or no for each year. Models with unknown "
+        "open-weight status are excluded from the denominator."
     )
