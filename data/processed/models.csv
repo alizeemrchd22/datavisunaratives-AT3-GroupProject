@@ -1,0 +1,401 @@
+model,org,org_type,is_open,compute_flops,publication_date
+model-0,Mistral,other,False,,2019-03-25
+model-1,Stanford University,academia,True,9.259286431377163e+24,2023-12-12
+model-2,Tsinghua University,other,True,9.494232484529337e+22,2022-12-16
+model-3,Meta,industry,False,4.125802107534122e+22,2015-10-25
+model-4,Microsoft,academia,False,4.081015965705948e+23,2019-12-23
+model-5,Google,industry-academia,True,1.2594160554476974e+25,2017-07-24
+model-6,Google,industry-academia,True,,2015-10-27
+model-7,Google,industry,True,4.028114754720066e+21,2018-12-15
+model-8,OpenAI,industry-academia,False,,2023-10-09
+model-9,Mistral,industry-academia,True,,2025-04-10
+model-10,Stanford University,other,False,2.4961523540700168e+20,2014-09-21
+model-11,Allen Institute,industry-academia,False,,2015-08-20
+model-12,Tsinghua University,other,False,,2015-06-03
+model-13,Stanford University,other,True,1.2676790829823542e+21,2021-01-15
+model-14,Allen Institute,industry,True,2.7896282499365732e+20,2022-01-30
+model-15,Alibaba,industry,False,,2022-05-26
+model-16,Stanford University,industry-academia,True,7.80554721046401e+20,2022-05-26
+model-17,Tsinghua University,academia,True,,2014-01-03
+model-18,Tsinghua University,industry-academia,False,,2016-07-31
+model-19,Allen Institute,industry-academia,False,1.0041573776373484e+24,2023-11-30
+model-20,Meta,academia,False,2.2621648503982991e+24,2012-07-29
+model-21,Mistral,industry,False,2.3945503586817665e+23,2018-12-01
+model-22,Stanford University,industry-academia,False,,2023-03-18
+model-23,Google,academia,False,1.1252873648483978e+25,2025-02-02
+model-24,Microsoft,other,False,3.222359757640254e+22,2013-10-04
+model-25,Mistral,industry,False,,2024-03-06
+model-26,Tsinghua University,industry-academia,False,6.484185997889489e+20,2013-07-31
+model-27,Google,industry-academia,False,,2024-12-20
+model-28,Alibaba,academia,False,1.35980175534488e+23,2014-04-16
+model-29,Alibaba,industry,False,2.5850058925763698e+23,2014-07-03
+model-30,Mistral,academia,True,,2015-11-21
+model-31,OpenAI,academia,False,4.772523414061718e+23,2023-06-05
+model-32,Google,other,True,,2019-01-18
+model-33,Mistral,other,False,,2023-10-24
+model-34,Google,industry,True,,2012-06-26
+model-35,Tsinghua University,academia,False,3.4628702194804756e+21,2024-12-19
+model-36,Google,industry-academia,True,6.935533195439867e+21,2021-11-13
+model-37,Meta,other,False,2.316553423289317e+23,2020-11-21
+model-38,Anthropic,industry,True,,2016-11-22
+model-39,Anthropic,other,True,4.4332903914699045e+22,2017-01-16
+model-40,Anthropic,other,True,,2017-11-13
+model-41,Google,other,False,,2020-01-13
+model-42,Google,academia,False,3.498753940077654e+20,2022-06-09
+model-43,OpenAI,industry,True,1.0001392796666757e+22,2014-02-28
+model-44,Google,industry-academia,True,1.2772030542598084e+24,2023-07-13
+model-45,Stanford University,industry,False,3.5017762382124355e+23,2025-08-20
+model-46,Tsinghua University,industry,True,9.392161240606924e+23,2021-04-07
+model-47,Stanford University,industry,True,,2021-11-20
+model-48,Meta,industry,True,,2023-03-28
+model-49,Stanford University,other,False,,2016-08-24
+model-50,Alibaba,industry-academia,False,1.1634905855771763e+23,2016-10-05
+model-51,Microsoft,industry-academia,False,9.615896726928602e+22,2024-07-30
+model-52,Anthropic,other,True,2.8971322947681376e+21,2013-08-18
+model-53,Allen Institute,academia,False,,2021-10-01
+model-54,Mistral,industry,True,3.979971992644442e+22,2022-12-28
+model-55,Allen Institute,industry,False,1.1823246684689466e+25,2016-07-23
+model-56,Microsoft,academia,False,,2016-10-28
+model-57,Stanford University,industry-academia,True,,2024-09-20
+model-58,Allen Institute,academia,True,,2014-08-28
+model-59,Stanford University,academia,False,4.1218761945530746e+24,2016-06-09
+model-60,Mistral,industry,True,1.3216568708597785e+20,2021-10-08
+model-61,Stanford University,industry-academia,True,,2016-05-18
+model-62,Alibaba,industry,True,1.6723217025695889e+25,2021-12-17
+model-63,Microsoft,academia,False,1.2607529669594117e+22,2012-05-28
+model-64,Mistral,industry-academia,False,,2016-12-24
+model-65,OpenAI,industry-academia,False,,2021-08-05
+model-66,Tsinghua University,industry-academia,True,,2024-07-23
+model-67,Alibaba,other,False,,2013-06-24
+model-68,Mistral,industry,False,,2019-05-05
+model-69,Tsinghua University,industry,False,5.528738150479865e+22,2012-08-31
+model-70,Microsoft,industry,False,5.71522286694406e+20,2014-08-24
+model-71,Microsoft,industry-academia,False,1.2934516927318722e+25,2020-12-24
+model-72,Anthropic,academia,False,7.897328919684395e+24,2018-12-08
+model-73,Anthropic,industry,True,,2025-04-03
+model-74,Alibaba,industry-academia,False,,2023-03-30
+model-75,Mistral,other,True,,2012-11-16
+model-76,Google,other,True,2.8943067074503457e+24,2023-08-06
+model-77,Allen Institute,academia,True,,2022-05-27
+model-78,Tsinghua University,industry-academia,False,1.9623158101685235e+21,2015-02-11
+model-79,Microsoft,other,False,1.2299200728414037e+25,2015-02-17
+model-80,Stanford University,industry-academia,False,,2023-09-16
+model-81,Tsinghua University,industry,False,,2023-10-16
+model-82,Meta,academia,True,1.5675468061558941e+22,2012-01-13
+model-83,Microsoft,other,True,1.4263132258425801e+25,2012-03-01
+model-84,Alibaba,industry,True,,2012-04-29
+model-85,Tsinghua University,other,False,,2014-08-28
+model-86,Tsinghua University,industry-academia,True,1.111023357285659e+22,2025-08-12
+model-87,Microsoft,academia,False,8.868807191427421e+24,2025-05-07
+model-88,Alibaba,other,True,5.31856125219394e+22,2023-07-05
+model-89,Microsoft,other,False,4.899153155359884e+25,2019-11-16
+model-90,Microsoft,academia,True,,2017-10-30
+model-91,Mistral,industry-academia,False,,2013-10-20
+model-92,Meta,other,False,5.178845514291762e+21,2021-01-14
+model-93,Meta,industry-academia,True,4.0460645940552034e+24,2012-01-24
+model-94,Alibaba,academia,False,1.2752280556869504e+20,2025-01-26
+model-95,Stanford University,other,True,,2017-08-07
+model-96,Google,other,False,3.593696851799999e+21,2019-02-10
+model-97,Google,industry,True,1.6616968163025355e+25,2017-12-12
+model-98,Microsoft,industry-academia,True,8.609744389330872e+21,2024-11-13
+model-99,Mistral,other,True,7.96440336543302e+22,2019-04-18
+model-100,Anthropic,industry,True,4.3880050656738915e+20,2023-02-23
+model-101,Alibaba,academia,False,,2021-04-26
+model-102,Microsoft,industry-academia,False,3.766753527572123e+20,2023-05-05
+model-103,Meta,academia,False,,2014-02-08
+model-104,Alibaba,industry-academia,True,6.39490903428685e+24,2016-07-27
+model-105,Mistral,other,False,,2016-05-10
+model-106,Google,academia,True,2.3308926185370173e+20,2013-02-05
+model-107,Google,other,True,,2012-09-21
+model-108,Stanford University,industry,True,7.568345263800868e+20,2016-10-05
+model-109,Microsoft,academia,False,2.0744374417585816e+20,2025-08-22
+model-110,Tsinghua University,industry,False,9.623075633180739e+24,2022-01-17
+model-111,OpenAI,academia,False,2.415999976500968e+22,2017-10-20
+model-112,Mistral,industry,True,1.5590155839637292e+25,2022-12-14
+model-113,Anthropic,other,False,2.9119828193430697e+24,2021-04-15
+model-114,Mistral,other,False,1.606142891499596e+21,2013-05-08
+model-115,Alibaba,industry,True,3.2275113285736156e+20,2015-11-27
+model-116,Alibaba,other,False,1.0669486406561496e+21,2019-12-04
+model-117,Meta,industry-academia,True,9.278568681248088e+22,2013-12-12
+model-118,Alibaba,academia,False,1.4011635707140324e+22,2016-12-29
+model-119,Google,other,False,,2014-08-25
+model-120,Tsinghua University,other,False,,2013-12-20
+model-121,Anthropic,other,False,2.1305817500660295e+23,2012-03-16
+model-122,Allen Institute,industry-academia,True,,2017-06-05
+model-123,OpenAI,academia,True,,2021-06-03
+model-124,Allen Institute,industry-academia,False,,2020-11-04
+model-125,Google,other,True,1.30206901565867e+24,2025-07-19
+model-126,Stanford University,industry-academia,True,4.2615376568377404e+24,2013-07-29
+model-127,Tsinghua University,industry,False,,2013-04-03
+model-128,Mistral,academia,True,5.1822104702302565e+20,2013-01-25
+model-129,Meta,academia,False,,2014-04-06
+model-130,Allen Institute,industry-academia,True,1.1834091240900279e+22,2018-05-18
+model-131,Stanford University,academia,False,1.4144112315906956e+24,2022-12-22
+model-132,Mistral,academia,False,8.52698416044666e+25,2020-10-08
+model-133,OpenAI,industry-academia,True,1.6239416206806e+24,2020-09-16
+model-134,Alibaba,industry-academia,True,2.7549542222653197e+25,2015-09-01
+model-135,Allen Institute,industry,True,1.202623516155946e+20,2024-12-21
+model-136,Google,other,False,4.190876077576199e+23,2025-04-05
+model-137,Microsoft,academia,False,3.83650839741629e+20,2016-12-28
+model-138,Stanford University,industry,True,,2019-10-23
+model-139,OpenAI,industry,False,5.774129477940791e+25,2017-11-10
+model-140,Tsinghua University,academia,False,,2016-03-17
+model-141,Stanford University,industry-academia,True,6.303301810366334e+20,2015-12-03
+model-142,Alibaba,academia,True,9.921245832764329e+24,2024-09-19
+model-143,Allen Institute,other,True,,2023-01-04
+model-144,Anthropic,industry,False,,2023-07-15
+model-145,Anthropic,industry,False,3.459833258435132e+24,2014-07-26
+model-146,Anthropic,academia,True,3.674010956827328e+23,2017-09-02
+model-147,Allen Institute,industry-academia,True,,2017-03-14
+model-148,OpenAI,academia,True,1.1460515641990734e+20,2024-12-19
+model-149,Anthropic,other,True,,2021-01-09
+model-150,Google,industry,False,,2022-09-16
+model-151,Anthropic,other,False,4.364346235910644e+20,2024-07-02
+model-152,Allen Institute,industry,False,1.909891881651568e+23,2012-04-28
+model-153,Stanford University,other,False,1.6587328310558274e+22,2023-02-16
+model-154,Microsoft,industry,False,,2019-08-15
+model-155,Allen Institute,academia,True,1.2590203804699617e+20,2013-02-28
+model-156,Stanford University,academia,True,9.769147558021722e+20,2024-11-06
+model-157,Allen Institute,other,True,,2023-10-30
+model-158,Google,industry-academia,True,4.565039054627549e+23,2021-07-04
+model-159,Anthropic,other,True,3.113758711828901e+20,2022-10-31
+model-160,Mistral,academia,False,,2017-04-28
+model-161,Alibaba,industry-academia,True,,2018-06-11
+model-162,Anthropic,industry-academia,False,5.256561567693809e+21,2023-08-20
+model-163,Anthropic,other,False,1.3427175699042344e+23,2019-07-31
+model-164,Anthropic,industry-academia,False,,2024-07-13
+model-165,Tsinghua University,other,False,1.651041963045934e+24,2018-01-25
+model-166,Meta,industry,False,,2015-10-12
+model-167,Alibaba,academia,True,6.294424809137787e+25,2012-10-04
+model-168,Google,industry,False,1.1283667074379523e+22,2025-05-04
+model-169,Anthropic,other,False,,2016-05-20
+model-170,Meta,industry,False,,2013-11-28
+model-171,Alibaba,industry-academia,False,5.477789928989455e+24,2024-07-01
+model-172,Alibaba,other,False,,2016-12-06
+model-173,Alibaba,academia,False,2.6081946724066304e+25,2020-03-12
+model-174,Allen Institute,academia,True,6.723799645338101e+24,2025-02-05
+model-175,Allen Institute,other,True,,2013-05-05
+model-176,OpenAI,industry-academia,True,2.9907353689037133e+25,2025-05-03
+model-177,OpenAI,industry-academia,False,,2019-07-20
+model-178,OpenAI,other,True,,2019-01-26
+model-179,Alibaba,industry,False,,2020-06-19
+model-180,Allen Institute,academia,True,,2019-11-21
+model-181,Allen Institute,academia,True,,2023-02-08
+model-182,Stanford University,other,False,4.103789085955661e+21,2025-05-28
+model-183,Allen Institute,industry,True,,2019-12-17
+model-184,Mistral,academia,True,,2012-03-01
+model-185,Google,academia,False,,2014-10-03
+model-186,OpenAI,industry,False,2.1876280376279353e+25,2020-11-29
+model-187,Mistral,academia,False,,2025-04-11
+model-188,Google,industry-academia,False,5.0054291958825505e+23,2014-01-31
+model-189,Allen Institute,academia,False,,2016-01-21
+model-190,Mistral,academia,False,2.3420236126540202e+20,2014-06-16
+model-191,Allen Institute,industry-academia,True,,2021-12-05
+model-192,Microsoft,other,True,,2023-05-23
+model-193,OpenAI,industry,False,1.6348763675965128e+24,2021-05-31
+model-194,Tsinghua University,academia,False,8.070677215104499e+24,2024-03-12
+model-195,Allen Institute,other,False,,2024-08-21
+model-196,Microsoft,academia,True,,2020-02-11
+model-197,Mistral,industry-academia,True,1.1600609910857944e+21,2022-06-22
+model-198,Microsoft,academia,True,7.593353439454945e+22,2013-08-17
+model-199,Mistral,other,False,6.133320607582165e+20,2017-04-22
+model-200,Meta,industry-academia,False,7.000035512898792e+21,2014-12-26
+model-201,Anthropic,other,True,1.7569577888109749e+22,2012-08-28
+model-202,Microsoft,industry-academia,True,,2018-09-23
+model-203,Meta,industry-academia,False,7.963440054280811e+21,2020-12-25
+model-204,Mistral,academia,True,1.5063710161283251e+23,2021-12-14
+model-205,Mistral,industry,False,,2012-02-29
+model-206,OpenAI,industry,True,,2016-02-06
+model-207,Allen Institute,industry-academia,True,,2012-09-19
+model-208,Allen Institute,industry-academia,False,2.178194385948272e+20,2016-12-07
+model-209,Meta,industry-academia,True,2.6443105715313464e+21,2012-04-25
+model-210,Anthropic,industry,True,,2025-03-23
+model-211,Tsinghua University,other,True,1.8452854042089128e+25,2019-11-05
+model-212,Stanford University,other,True,8.815951930643106e+23,2014-09-30
+model-213,Anthropic,industry-academia,True,,2022-10-12
+model-214,OpenAI,academia,False,,2020-02-13
+model-215,Allen Institute,other,False,,2012-12-17
+model-216,Stanford University,industry-academia,False,9.669650748502203e+21,2021-06-10
+model-217,Google,other,False,1.2147825922984875e+22,2016-05-15
+model-218,Mistral,academia,True,5.70595409001377e+25,2013-08-05
+model-219,Alibaba,academia,False,9.56763127586668e+20,2017-03-10
+model-220,OpenAI,other,True,3.3900515835935116e+20,2012-02-03
+model-221,Stanford University,industry,False,6.769162877121268e+21,2024-04-24
+model-222,Tsinghua University,academia,True,,2012-12-03
+model-223,Google,academia,False,4.1462120425682764e+21,2020-11-05
+model-224,Allen Institute,industry-academia,False,1.7176123832618528e+24,2021-07-24
+model-225,Alibaba,other,False,,2017-07-16
+model-226,Microsoft,other,True,,2018-09-05
+model-227,Google,academia,False,,2024-08-15
+model-228,Google,industry-academia,True,8.763977475837963e+21,2022-08-09
+model-229,Alibaba,industry-academia,True,5.4848248229921557e+23,2021-05-28
+model-230,OpenAI,other,True,1.7383524518459636e+23,2020-05-31
+model-231,Tsinghua University,industry,False,2.692555947122255e+20,2021-03-15
+model-232,Mistral,academia,False,,2015-12-22
+model-233,Allen Institute,industry-academia,True,,2021-09-30
+model-234,Meta,industry,True,,2013-07-24
+model-235,Google,academia,False,5.033961401665044e+24,2019-06-02
+model-236,Anthropic,other,False,,2018-04-25
+model-237,Mistral,industry,False,1.509464262949372e+21,2018-05-26
+model-238,Stanford University,other,False,,2020-03-12
+model-239,Google,other,True,1.7969836741999372e+20,2025-04-24
+model-240,Stanford University,industry,False,3.0866321303426334e+23,2022-08-24
+model-241,Microsoft,industry-academia,True,3.5106001027516982e+22,2019-10-30
+model-242,Meta,academia,True,,2016-10-23
+model-243,Anthropic,academia,False,1.5444547855528623e+23,2017-07-23
+model-244,Mistral,industry-academia,True,,2023-04-30
+model-245,Allen Institute,other,True,1.2946603564108232e+22,2013-04-12
+model-246,OpenAI,other,True,1.7528044983893544e+20,2023-10-05
+model-247,Tsinghua University,industry,True,7.903190010321533e+25,2014-08-19
+model-248,Alibaba,industry,False,2.826075310374718e+20,2018-05-04
+model-249,Meta,industry-academia,True,1.4216626015621177e+20,2025-06-17
+model-250,Meta,industry,True,,2025-02-24
+model-251,Meta,academia,False,6.56322782663342e+20,2025-03-01
+model-252,Meta,industry-academia,True,5.842477152647993e+24,2021-01-04
+model-253,Mistral,industry,False,,2012-01-15
+model-254,Meta,other,True,1.0957220511921423e+22,2018-10-31
+model-255,Meta,industry-academia,True,,2013-01-23
+model-256,OpenAI,industry,False,3.88521025369501e+25,2014-05-19
+model-257,OpenAI,academia,False,,2021-04-17
+model-258,Alibaba,industry-academia,False,1.1409601500630482e+25,2024-08-05
+model-259,Meta,academia,True,,2014-12-26
+model-260,Mistral,industry-academia,True,,2022-01-04
+model-261,Tsinghua University,other,False,3.6681841123869364e+21,2021-01-31
+model-262,Mistral,academia,False,8.971660861501023e+22,2020-08-21
+model-263,Tsinghua University,industry,False,,2014-11-15
+model-264,Alibaba,academia,True,1.5555248099348542e+24,2024-10-12
+model-265,Mistral,industry-academia,False,9.234857308833473e+24,2017-06-07
+model-266,Google,industry-academia,False,1.851166388953503e+23,2019-01-07
+model-267,Tsinghua University,industry,True,8.810805838262087e+23,2016-06-17
+model-268,Anthropic,industry-academia,False,1.5106969218839355e+22,2023-05-10
+model-269,Meta,industry,True,1.407465387604008e+21,2015-05-17
+model-270,Anthropic,industry-academia,False,1.5256032128516113e+24,2015-04-16
+model-271,Anthropic,other,True,1.0406244995362808e+20,2022-08-11
+model-272,Anthropic,industry,True,,2025-01-27
+model-273,Mistral,other,True,,2016-02-28
+model-274,Mistral,industry,True,5.021176918621391e+23,2016-11-15
+model-275,Stanford University,industry-academia,False,3.69558421951767e+23,2024-07-09
+model-276,Alibaba,industry-academia,True,4.296101414012537e+20,2012-03-09
+model-277,Allen Institute,industry,True,3.574487237651178e+23,2014-08-01
+model-278,Stanford University,other,True,3.52437717249473e+24,2018-04-20
+model-279,Microsoft,industry-academia,False,,2024-04-01
+model-280,Google,academia,True,1.0878356913368902e+24,2012-01-10
+model-281,Tsinghua University,industry,False,1.7866121216784668e+24,2014-02-06
+model-282,Meta,industry,True,1.7197261466613496e+21,2013-01-03
+model-283,Tsinghua University,industry-academia,True,3.628265326480572e+25,2016-01-19
+model-284,Google,academia,True,9.230998794411805e+21,2014-06-11
+model-285,Mistral,industry-academia,False,3.178423306044359e+23,2025-06-19
+model-286,Allen Institute,other,True,4.1600383081230336e+20,2018-08-31
+model-287,OpenAI,industry-academia,False,9.515466885808324e+25,2012-08-24
+model-288,Mistral,industry-academia,True,,2012-11-27
+model-289,Anthropic,industry-academia,False,5.898122669736011e+22,2023-06-23
+model-290,Google,academia,False,2.4929781824410006e+23,2021-10-05
+model-291,Allen Institute,industry,True,,2014-03-29
+model-292,Allen Institute,industry-academia,True,2.757260989719062e+21,2025-02-11
+model-293,Google,industry,True,,2019-02-08
+model-294,Tsinghua University,industry,True,3.063297102863152e+20,2022-12-16
+model-295,Mistral,industry-academia,False,7.082806289609489e+20,2025-02-11
+model-296,Alibaba,industry-academia,False,,2018-05-14
+model-297,Anthropic,academia,False,4.4038523732760616e+24,2013-08-17
+model-298,Mistral,industry-academia,False,1.3099024719399354e+25,2024-09-17
+model-299,Mistral,other,False,1.4701772466199365e+25,2017-02-27
+model-300,OpenAI,other,False,3.641941272962332e+24,2018-10-02
+model-301,Google,other,True,1.2188392029049984e+22,2018-12-15
+model-302,OpenAI,industry,False,3.0866467056131465e+23,2017-10-26
+model-303,Microsoft,industry,True,,2020-12-05
+model-304,OpenAI,academia,True,6.80887010507296e+20,2019-08-17
+model-305,Google,industry-academia,True,3.0798065545654954e+20,2016-08-08
+model-306,Meta,industry-academia,False,5.643014615094487e+22,2016-04-12
+model-307,Stanford University,industry-academia,True,,2015-05-28
+model-308,Tsinghua University,other,True,,2012-06-12
+model-309,Meta,industry,False,,2024-06-05
+model-310,Allen Institute,industry,False,1.7292853350924317e+22,2020-09-13
+model-311,Alibaba,academia,True,1.989790101399064e+25,2012-02-10
+model-312,Stanford University,industry,True,1.0117102597462068e+22,2012-05-27
+model-313,Allen Institute,industry-academia,False,,2025-06-07
+model-314,Alibaba,academia,True,2.5613579922748332e+23,2025-05-25
+model-315,OpenAI,other,True,6.280578683186549e+21,2014-01-16
+model-316,Google,academia,False,,2024-11-25
+model-317,Mistral,academia,False,1.6067923845599524e+22,2015-03-01
+model-318,Anthropic,academia,False,2.6638900754425425e+21,2024-10-24
+model-319,Google,industry,False,,2022-01-06
+model-320,Anthropic,other,False,,2015-05-27
+model-321,Microsoft,other,False,,2022-04-23
+model-322,Anthropic,academia,False,3.161663974404615e+20,2024-05-19
+model-323,Anthropic,industry-academia,False,8.012858458324979e+20,2019-01-09
+model-324,Microsoft,other,False,,2021-06-23
+model-325,Anthropic,academia,True,,2012-04-17
+model-326,Anthropic,other,False,2.6856109937063273e+21,2025-03-09
+model-327,Allen Institute,academia,True,1.0628040432420064e+20,2015-01-18
+model-328,Stanford University,industry,False,,2017-11-05
+model-329,Alibaba,industry,True,8.716089721541478e+25,2014-11-05
+model-330,Google,industry-academia,False,,2025-01-12
+model-331,Microsoft,industry,True,1.757784410054881e+20,2024-03-19
+model-332,Allen Institute,industry,False,5.702413928964693e+23,2013-12-15
+model-333,Meta,industry-academia,False,2.0410154129150897e+23,2018-04-13
+model-334,Tsinghua University,academia,False,2.153322683200994e+22,2012-07-17
+model-335,Mistral,industry,True,,2022-07-04
+model-336,Stanford University,industry-academia,True,,2023-12-16
+model-337,Mistral,other,False,,2024-05-28
+model-338,OpenAI,other,True,1.7863023167711526e+22,2020-07-04
+model-339,Tsinghua University,industry,True,1.216466314715381e+23,2017-05-19
+model-340,Stanford University,other,True,2.5518585538573736e+21,2025-06-19
+model-341,Microsoft,academia,True,1.1062249898426342e+21,2024-08-24
+model-342,Tsinghua University,academia,True,,2025-01-30
+model-343,Allen Institute,academia,True,,2021-04-25
+model-344,Alibaba,other,True,1.2263657965861415e+20,2019-03-19
+model-345,Microsoft,industry,True,,2020-04-12
+model-346,Google,industry-academia,True,7.057464921844048e+24,2016-08-13
+model-347,OpenAI,industry-academia,True,9.837205633839565e+21,2018-03-03
+model-348,Meta,academia,True,2.2643079186267598e+23,2017-05-18
+model-349,Mistral,industry-academia,True,,2018-01-19
+model-350,Meta,industry,False,2.0166988943834877e+23,2012-08-04
+model-351,Mistral,industry-academia,True,,2016-06-07
+model-352,Meta,academia,True,1.7520666266696637e+21,2012-02-14
+model-353,Stanford University,industry,False,4.868338766072867e+22,2015-10-26
+model-354,Tsinghua University,academia,False,1.3895488176285008e+23,2018-09-16
+model-355,Allen Institute,academia,True,5.6474232438176226e+20,2018-08-22
+model-356,Tsinghua University,industry-academia,True,,2014-07-15
+model-357,Allen Institute,industry-academia,True,,2017-07-31
+model-358,Allen Institute,other,True,1.716818929703029e+24,2017-01-27
+model-359,Alibaba,academia,False,1.6386185431022431e+22,2015-08-04
+model-360,Stanford University,other,False,9.481304352189858e+22,2022-07-07
+model-361,Mistral,industry,False,6.223242946385596e+24,2013-01-03
+model-362,Allen Institute,academia,False,3.793642267788338e+21,2012-06-01
+model-363,Meta,industry,False,6.939415156414981e+20,2025-04-28
+model-364,Tsinghua University,academia,True,,2020-04-08
+model-365,OpenAI,other,True,1.7299919826254319e+25,2019-11-03
+model-366,OpenAI,industry,True,,2019-05-03
+model-367,Stanford University,industry,False,7.29513896115681e+22,2016-08-06
+model-368,Google,academia,False,1.6297182508092965e+20,2016-07-18
+model-369,Alibaba,other,False,2.869333637489063e+24,2023-07-03
+model-370,Mistral,industry,True,5.507406729395008e+24,2017-01-04
+model-371,OpenAI,other,False,,2018-09-01
+model-372,Stanford University,other,False,1.6393940562037218e+20,2024-05-18
+model-373,Microsoft,academia,False,7.531300039084545e+24,2023-06-11
+model-374,Mistral,industry,False,1.0490319854704729e+22,2015-10-26
+model-375,Allen Institute,academia,True,,2014-04-03
+model-376,Tsinghua University,industry-academia,True,2.5314058321017436e+25,2025-05-08
+model-377,Tsinghua University,other,True,3.233766279609432e+21,2013-12-28
+model-378,Alibaba,industry,False,9.132071801281045e+25,2019-02-06
+model-379,Tsinghua University,industry-academia,True,,2015-03-22
+model-380,Alibaba,industry-academia,False,4.8785809361644264e+20,2022-09-28
+model-381,OpenAI,other,False,7.657137515517874e+22,2023-10-11
+model-382,Alibaba,industry-academia,False,2.059230202040975e+24,2021-03-25
+model-383,Tsinghua University,other,True,,2022-06-20
+model-384,Alibaba,other,False,,2019-01-01
+model-385,Tsinghua University,industry-academia,False,6.653957912442908e+25,2016-06-28
+model-386,Microsoft,academia,True,,2012-03-04
+model-387,Google,other,True,,2024-10-11
+model-388,Tsinghua University,industry-academia,True,3.4411258317205836e+23,2019-05-24
+model-389,Allen Institute,other,False,1.4180575682640785e+24,2023-10-11
+model-390,Google,industry,False,2.6138877356271644e+25,2017-01-08
+model-391,Tsinghua University,industry,True,,2017-04-24
+model-392,Anthropic,industry-academia,True,2.7277696783465772e+25,2016-05-11
+model-393,Google,industry-academia,False,,2020-03-18
+model-394,Tsinghua University,other,True,4.2476684457613194e+24,2016-08-24
+model-395,Alibaba,industry,True,9.736541973418975e+25,2025-06-25
+model-396,Alibaba,other,True,,2017-07-02
+model-397,Allen Institute,academia,False,,2021-09-01
+model-398,Tsinghua University,other,False,,2016-01-01
+model-399,Tsinghua University,academia,True,,2014-09-15
