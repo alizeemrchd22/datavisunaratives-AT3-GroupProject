@@ -15,7 +15,7 @@ def render(df):
     )
     labels = bars.mark_text(dy=-8).encode(text="models:Q")
 
-    st.altair_chart(bars + labels, use_container_width=True)
+    st.altair_chart(bars + labels, width="stretch")
     st.caption(
         "Every model in the dataset, counted by year of publication. "
         "2026 is not a finished year."
