@@ -1,14 +1,17 @@
 import streamlit as st
-
+from charts import chart_f_compute_vs_models
 from lib import load, viz
 
 df = load.year_filter(load.load_models())
 
 st.title("3. It depends what you count")
-st.write("Share of compute and share of models, for the same organisations.")
+
+st.write(
+    "Comparing the share of training compute with the share "
+    "of models helps us understand concentration in AI."
+)
 
 if not viz.is_empty(df):
-    # Student A : chart F, avec son propre filtre top 3 / 5 / 10.
-    st.info("Chart F goes here.")
+    chart_f_compute_vs_models.render(df)
 
 viz.footer()

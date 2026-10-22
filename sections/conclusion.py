@@ -1,5 +1,6 @@
 
 import streamlit as st
+import pandas as pd
 
 from lib import load, viz
 
@@ -14,6 +15,105 @@ st.write(
     "are warning signs worth investigating, but they do not by themselves "
     "prove that the AI industry is a monopoly."
 )
+
+
+st.subheader("What the comparison tells us")
+
+analysis = df[df["year"].between(2012, 2026)].copy()
+
+analysis["compute_flops"] = pd.to_numeric(
+    analysis["compute_flops"],
+    errors="coerce"
+)
+
+# Same eligible records used in Chart F
+analysis = analysis[
+    analysis["compute_flops"].notna()
+    & (analysis["compute_flops"] > 0)
+].copy()
+
+if not analysis.empty:
+
+    # Rank organisations by total known compute
+    top_five = (
+        analysis.groupby("org")["compute_flops"]
+        .sum()
+        .nlargest(5)
+        .index
+    )
+
+    top_models = analysis[
+        analysis["org"].isin(top_five)
+    ]
+
+    # Compute share of top five organisations
+    compute_share = (
+        top_models["compute_flops"].sum()
+        / analysis["compute_flops"].sum()
+        * 100
+    )
+
+    # Model share of the same organisations
+    model_share = (
+        len(top_models) / len(analysis) * 100
+    )
+
+    difference = compute_share - model_share
+
+    col1, col2, col3 = st.columns(3)
+
+    col1.metric(
+        "Training compute share",
+        f"{compute_share:.1f}%"
+    )
+
+    col2.metric(
+        "Model share",
+        f"{model_share:.1f}%"
+    )
+
+    col3.metric(
+        "Difference",
+        f"{difference:.1f} pp"
+    )
+
+    st.write(
+        f"Across 2012–2026, the five organisations with "
+        f"the highest recorded training compute accounted "
+        f"for {compute_share:.1f}% of known training compute, "
+        f"while producing {model_share:.1f}% of models "
+        f"with known positive compute."
+    )
+
+    st.write(
+        "This difference suggests that training compute "
+        "is more concentrated among these organisations "
+        "than model production. Although other organisations "
+        "participate in AI development, access to the "
+        "computing resources needed for large-scale training "
+        "may represent a barrier to competition."
+    )
+
+    st.info(
+        "For an ACCC analyst, these results provide "
+        "potential warning signs that justify further "
+        "investigation. However, training compute is not "
+        "equivalent to commercial market share, and these "
+        "results do not establish a monopoly."
+    )
+
+    st.caption(
+        "Calculated using models with known positive training "
+        "compute from 2012–2026. Organisations are ranked "
+        "over the full period. The 2026 data is incomplete."
+    )
+
+else:
+    st.warning(
+        "Insufficient training-compute data "
+        "to calculate the comparison."
+    )
+
 
 st.subheader("What our data cannot show")
 
@@ -35,7 +135,7 @@ st.markdown("**How often is training compute known?**")
 
 data = df.copy()
 
-data["compute_flops"] = __import__("pandas").to_numeric(
+data["compute_flops"] = pd.to_numeric(
     data["compute_flops"], errors="coerce"
 )
 
