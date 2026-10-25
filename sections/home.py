@@ -17,7 +17,7 @@ col1, col2, col3 = st.columns(3)
 col1.metric("Models in the dataset", f"{len(df):,}", border=True)
 col2.metric("Organisations", f"{df['org'].nunique():,}", border=True)
 col3.metric(
-    "Years covered",
+    "Years in the dataset",
     f"{int(df['year'].min())}-{int(df['year'].max())}",
     border=True,
 )
