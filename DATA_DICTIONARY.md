@@ -15,11 +15,11 @@ The project uses AI model data to investigate the growth of artificial intellige
 
 
 
-**Source URL:** [INSERT THE DIRECT SOURCE DATASET URL]
+**Source URL:** https://epoch.ai/data/ai-models
 
 
 
-**Licence:** [INSERT THE ACTUAL LICENCE OR REUSE CONDITIONS]
+**Licence:** Creative Commons Attribution (CC BY). Epoch AI allows reuse, distribution and reproduction provided the source and authors are credited.
 
 
 
