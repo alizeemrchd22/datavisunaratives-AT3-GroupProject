@@ -1,142 +1,199 @@
-
 # Data Dictionary
 
-## 1. Project Dataset
+The app answers one question: are a few companies monopolising AI, or is the
+field opening up? It reads a single processed file built from one Epoch AI
+download. This document covers every dataset in `data/`: the raw source sample
+and the two processed files.
 
-The project uses AI model data to investigate the growth of artificial intelligence, organisation participation, training compute and open-weight model availability.
+| File | Role | Rows | Read by the app? |
+| ---- | ---- | ---- | ---------------- |
+| `data/raw/epoch_all_ai_models_2026-10-21.csv` | Source sample (frozen download) | 3,628 | No, input to the build script |
+| `data/processed/models.csv` | Processed, one row per notable model | 1,104 | Yes, every chart |
+| `data/processed/org_merges.csv` | Processed lookup, organisation name merges | 7 | No, written by the build script as a record of the merges |
 
-## 2. Processed Dataset: models.csv
+All processed files are produced by one script:
 
-**File location:** `data/processed/models.csv`
+    python3 scripts/build_processed.py
 
+Run from the repo root. Re-running it on the raw file reproduces both processed
+files byte for byte (checked on 20 Nov 2026: `git status` shows no change after
+the run).
 
+---
 
-**Source:** Epoch AI (verify the exact dataset/release used).
+## 1. Source sample: epoch_all_ai_models_2026-10-21.csv
 
+**File location:** `data/raw/epoch_all_ai_models_2026-10-21.csv`
 
+**Source:** Epoch AI, "Data on AI Models" (the "All AI models" CSV export).
 
 **Source URL:** https://epoch.ai/data/ai-models
 
+**Licence:** Creative Commons Attribution (CC BY). Reuse is allowed
+with credit to Epoch AI.
 
+**Retrieved:** 21 October 2026. The file is kept unchanged as downloaded; the
+date in the filename is the download date.
 
-**Licence:** Creative Commons Attribution (CC BY). Epoch AI allows reuse, distribution and reproduction provided the source and authors are credited.
+**Rows / columns:** 3,628 rows, 57 columns.
 
+**Primary key:** `Model`. Checked: all 3,628 values are unique.
 
+**Time coverage:** `Publication date` runs from 1950-07-02 to 2026-10-17
+(12 rows have no publication date).
 
-**Primary key:** The `model` column should be checked for uniqueness. If model names are not unique, document the actual record identifier or state that no unique primary key is available.
+**Latest observation:** latest publication date 2026-10-17; latest record edit
+(`Last modified`) 2026-10-19 22:22 UTC.
+
+### Columns used by the build script
+
+The file has 57 columns. Only these seven are read; the others are kept so the
+sample stays identical to the download.
+
+| Column | Description | Units / format |
+| ------ | ----------- | -------------- |
+| Model | Model name | Text |
+| Organization | Every contributing organisation, comma separated | Text |
+| Organization categorization | One category per contributing organisation, comma separated: Industry, Academia, Research collective, Government | Text |
+| Notability criteria | Why Epoch counts the model as notable (e.g. "Highly cited", "SOTA improvement"); empty if not notable | Text |
+| Open model weights? | Whether the weights are publicly released | Yes / No / empty |
+| Training compute (FLOP) | Estimated total training compute | FLOP (floating-point operations), float |
+| Publication date | Date the model was published or announced | YYYY-MM-DD |
+
+Other columns (parameters, dataset size, hardware, cost, country, etc.) are
+described on the Epoch AI page above and are not used by the app.
+
+---
+
+## 2. Processed: models.csv
+
+**File location:** `data/processed/models.csv`
+
+**Produced by:** `scripts/build_processed.py` from the source sample above.
+
+**Source / URL / licence:** as the source sample (Epoch AI,
+https://epoch.ai/data/ai-models, CC BY).
+
+**Rows / columns:** 1,104 rows, 8 columns. One row per notable model.
+
+**Primary key:** `model`. Checked: all 1,104 values are unique.
+
+**Time coverage:** `publication_date` from 1950-07-02 to 2026-09-30. The app's
+charts show 2012 onwards (954 rows); the older rows stay in the file because
+Chart D needs them to know which organisations were already active before 2012.
+
+**Latest observation:** 2026-09-30 (latest publication date of a notable model).
 
 ### Columns
 
-| Column           | Description                                       | Units / Format     |
-| ---------------- | ------------------------------------------------- | ------------------ |
-| model            | Name of the AI model                              | Text               |
-| org_all          | Organisations associated with the model           | Text               |
-| org_count        | Number of organisations associated with the model | Count              |
-| org              | Main organisation associated with the model       | Text               |
-| org_type         | Classification of the organisation                | Category           |
-| open_weights     | Whether the model has open weights                | Yes / No / Unknown |
-| compute_flops    | Estimated training compute                        | FLOPs              |
-| publication_date | Model publication date                            | YYYY-MM-DD         |
+| Column | Description | Units / format | Derived from |
+| ------ | ----------- | -------------- | ------------ |
+| model | Model name | Text | `Model` |
+| org_all | Full list of contributing organisations | Text, comma separated; "Unknown" if empty | `Organization` |
+| org_count | Number of contributing organisations | Count (integer, 1 to 37) | commas in `Organization` + 1 |
+| org | Organisation the model is attributed to: the first one listed, after name merges | Text (240 distinct values) | first entry of `Organization`, then `org_merges.csv` |
+| org_type | Type of organisation behind the model | Category: industry, academia, industry-academia, other | `Organization categorization` |
+| open_weights | Whether the model weights are public | Category: yes, no, unknown | `Open model weights?` |
+| compute_flops | Estimated training compute | FLOP, float; empty if Epoch has no estimate (known for 51.2% of rows; range 4.0e1 to 9.4e26) | `Training compute (FLOP)` |
+| publication_date | Publication date | YYYY-MM-DD | `Publication date` |
 
-### Time Coverage
+Value counts, for checking against the app:
 
-Start date: [INSERT EARLIEST PUBLICATION DATE]
+- `org_type`: industry 635, academia 258, industry-academia 182, other 29
+- `open_weights`: no 492, yes 356, unknown 256
+- `org` with "Unknown": 18 rows
 
+### Transform (raw to models.csv)
 
+In order, as coded in `scripts/build_processed.py`:
 
-End date: [INSERT LATEST PUBLICATION DATE]
+1. Keep only notable models: rows where `Notability criteria` is filled
+   (3,628 to 1,104 rows). This raises training compute coverage from 39% to 51%.
+2. `org_all`: copy `Organization`, filling empty values with "Unknown".
+3. `org_count`: number of commas in `org_all` plus one. 28% of notable models
+   have more than one organisation.
+4. `org`: take the first organisation in the list and strip spaces, then
+   replace name variants using the merge table (section 3). Each model goes to
+   one organisation, so compute is never counted twice.
+5. `org_type`: split `Organization categorization` on commas. Industry and
+   Academia both present gives industry-academia; only Industry gives industry;
+   only Academia gives academia; anything else (research collective,
+   government, empty) gives other.
+6. `open_weights`: map Yes to yes, No to no, empty to unknown.
+7. `compute_flops`: convert `Training compute (FLOP)` to a number; anything
+   that does not parse becomes empty.
+8. `publication_date`: parse as a date; drop rows with no valid date (0 notable
+   rows dropped in this download).
+9. Drop exact duplicates on model, org_all and publication_date (0 dropped).
+10. Sort by publication_date and write the CSV.
 
+The app then adds a `year` column at load time (`lib/load.py`,
+year of `publication_date`). That column is not stored in the file.
 
+---
 
-Latest observation: [INSERT LATEST DATE PRESENT IN THE DATASET]
-
-### Processing and Transformations
-
-The processed dataset is used by the Streamlit application and its chart modules.
-
-
-
-Documented processing includes:
-
-- Cleaning and standardising organisation information.
-- Using organisation information to support organisation-level analysis.
-- Converting publication dates into years for yearly analysis.
-- Grouping models by publication year.
-- Counting newly appearing organisations based on their first recorded publication year.
-- Calculating the percentage of models with open weights using records classified as Yes and No.
-- Handling unknown or missing values appropriately in relevant calculations.
-
-The exact processing steps should be checked against the scripts used to generate the processed dataset.
-
-## 3. Processed Dataset: org_merges.csv
+## 3. Processed: org_merges.csv
 
 **File location:** `data/processed/org_merges.csv`
 
+**Produced by:** `scripts/build_processed.py`, written from the `ORG_MERGES`
+dictionary in that script. It records which organisation names were merged,
+so anyone can see the change without reading the code.
 
+**Source / URL / licence:** names come from the `Organization` column of the
+Epoch AI source sample (https://epoch.ai/data/ai-models, CC BY). The
+mapping itself is the group's own decision.
 
-**Source:** Derived from the project's original AI model organisation data.
+**Rows / columns:** 7 rows, 2 columns.
 
+**Primary key:** `raw_name`. Each name variant is merged into exactly one target.
 
+**Time coverage:** not applicable. This is a lookup table, not time series data.
 
-**Source URL:** [INSERT ORIGINAL SOURCE URL]
-
-
-
-**Licence:** [INSERT ACTUAL LICENCE OR REUSE CONDITIONS]
-
-
-
-**Purpose:** Stores organisation merging or standardisation information used during data preparation.
+**Latest observation:** not applicable. Generated with models.csv from the
+21 October 2026 download.
 
 ### Columns
 
-[INSERT ALL ACTUAL COLUMN NAMES FROM org_merges.csv]
+| Column | Description | Units / format |
+| ------ | ----------- | -------------- |
+| raw_name | Organisation name as it appears in Epoch's `Organization` column | Text |
+| merged_into | Name used in `models.csv` `org` | Text |
 
-### Primary Key
+### Contents
 
-[IDENTIFY THE UNIQUE ORGANISATION FIELD OR STATE THAT NO UNIQUE PRIMARY KEY EXISTS]
+| raw_name | merged_into |
+| -------- | ----------- |
+| DeepMind | Google |
+| Facebook AI Research | Meta |
+| Google Brain | Google |
+| Google DeepMind | Google |
+| Google Research | Google |
+| Meta AI | Meta |
+| Microsoft Research | Microsoft |
 
-### Time Coverage
+### Transform
 
-[STATE WHETHER THIS FILE IS TIME-BASED OR NOT APPLICABLE]
+The script turns the `ORG_MERGES` dictionary into a two-column table, sorts it
+by `raw_name` and writes the CSV. Names are matched exactly (whole string,
+case sensitive) against the first organisation listed for each model. The
+merges group labs that belong to the same parent company, because the question
+is about concentration between companies, not between research teams.
 
-### Latest Observation
+---
 
-[STATE THE LATEST OBSERVATION IF APPLICABLE]
+## 4. Data limitations
 
-### Transformations
-
-Document how organisation names were matched, merged or standardised. Include the script or process that generated this file.
-
-## 4. Original Source Data
-
-**Folder:** `data/raw/`
-
-
-
-The raw folder contains the original source data used to prepare the processed datasets.
-
-
-
-For each raw file, document:
-
-- Filename
-- Original publisher
-- Direct source URL
-- Licence or reuse conditions
-- Retrieval date
-- Columns and units
-- Primary key
-- Time coverage
-- Latest observation
-- Any processing applied to produce the processed dataset
-
-## 5. Data Limitations
-
-- Some models have unknown or missing training compute values.
-- Organisation names and affiliations may require standardisation.
-- Model counts do not necessarily represent market share.
-- Training compute alone does not establish commercial dominance.
-- Open-weight classification does not measure the full accessibility or commercial impact of a model.
-
-can u help me with this?tell me what u need i will give u that then u can update it
+- Training compute is missing for about half of notable models (51.2% known),
+  and coverage falls in recent years as labs stop publishing details. Compute
+  shares are shares of known compute only.
+- Epoch decides which models are "notable". Models outside that list, including
+  many commercial models, are not counted.
+- A model with several organisations is attributed to the first one listed.
+  This can understate the role of partners.
+- Model counts are not market share, and training compute alone does not show
+  commercial dominance (revenue, users or prices are not in the data).
+- `open_weights` describes the weights only, not licence terms or how widely a
+  model is actually used.
+- Epoch edits records over time. The numbers here match the frozen
+  21 October 2026 download, not the live page.
